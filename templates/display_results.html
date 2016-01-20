@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='display_results.css')}}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>Items</title>
+
+    <style>
+
+        	  body{
+
+            		font: 14px "Montserrat", sans-serif;
+
+          }
+
+    </style>
+
+</head>
+<body>
+
+    <h3 class="main_heading"> We got the following for <b>{{ requested_item }}</b></h3><br>
+    <h4 class="text-center"> Searching for different <a href="/" class="link_to_homepage">product?</a></h4>
+
+    <h1 class="text-center flipkart">   FlipKart      </h1>
+    <table class="table table-striped">
+        <th colspan="10"> Name of the Product</th>
+        <th colspan="10"> Price of the Product</th>
+
+        {% for items in itemsRecieved["flipkart"] %}
+
+            <tr>
+                <td colspan="10">{{ items }}</td>
+                <td colspan="10">{{ itemsRecieved["flipkart"][items] }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+    <h1 class="text-center  snapdeal"> SnapDeal</h1>
+
+    <table class="table table-striped">
+        <th colspan="10"> Name of the Product</th>
+        <th colspan="10"> Price of the Product</th>
+        {% for items in itemsRecieved["snapdeal"] %}
+
+            <tr>
+                <td colspan="10">{{ items }}</td>
+                <td colspan="10">{{ itemsRecieved["snapdeal"][items] }}</td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+
+
+</body>
+</html>

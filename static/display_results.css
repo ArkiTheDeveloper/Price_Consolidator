@@ -1,0 +1,23 @@
+.main_heading{
+
+    margin-left:35%;
+    font-size: 30px;
+
+}
+
+.flipkart, .snapdeal{
+
+    padding:30px;
+
+}
+
+td{
+
+    padding:10px;
+}
+
+.link_for_home{
+
+    text-decoration: none;
+    color: #000;
+}
